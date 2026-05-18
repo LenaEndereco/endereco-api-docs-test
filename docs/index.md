@@ -11,24 +11,18 @@ Egal ob Onlineshop, Warenwirtschaftssystem, CRM oder eine eigenentwickelte Softw
 Qualität der Stammdaten deiner Kunden und erspart Kunden und Mitarbeitern den Mehraufwand, der durch nicht normierte und
 fehlerhafte Stammdaten entsteht.
 
-Ein Auszug unserer Referenzen:
-
-|                           |                                 |                                 |                              |
-|---------------------------|---------------------------------|---------------------------------|------------------------------|
-| ![](./imgs/Lavera.png "") | | ![](./imgs/BasteiLuebbe.png "") | ![](./imgs/Berentzen.png "") |
-|   | ![](./imgs/TechniSat.png "")    | ![](./imgs/DB.png "")           | ![](./imgs/Drykorn.png "")   |
-
 ## Übersicht der Funktionen
 
-| **Adresse**             | [Adressprüfung](#adressprüfung)                                       | [PLZ Vorschläge](#postleitzahlen-autocomplete) </br> [Ortsvorschläge](#orts-autocomplete) </br> [Straßenvorschläge](#straßen-autocomplete) | [Adressdetails](#address-details) | [Single Line Adressvorschläge](#single-line-input) |
-|-------------------------|-----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|----------------------------------------------------|
-| **E-Mail Adresse**      | [E-Mail Prüfung](#e-mail-prüfung)                                     |                                                                                                                                            |                                   |                                                    |
-| **Person**              | [Namensprüfung](#namens-prüfung)                                      |                                                                                                                                            |                                   |                                                    |
-| **Telefonnummer**       | [Rufnummernprüfung](#telefonnummern-prüfung)                          |                                                                                                                                            |                                   |                                                    |
-| **IBAN**                | [IBAN-Prüfung](#iBan-prüfung)                                         |                                                                                                                                            |                                   |                                                    |
-| **Unternehmen**         | [Einfache Umsatzsteuer-ID Prüfung](#einfache-umsatzsteuer-id-prüfung) | [Qualifizierte Umsatzsteuer-ID Prüfung](#qualifizierte-umsatzsteuer-id-prüfung)                                                            | [Firmensuche](#firmensuche)       |                                                    |
-| **Verpackung**          | [Lucid Check](#lucid-check)                                           |                                                                                                                                            |                                   |                                                    |
-| **Technische Methoden** | [Abschluss einer Session](guidelines/sessions-guideline.md#session)   |                                                                                                                                            |                                   |                                                    |
+| Kategorie | Services |
+|-----------|---------|
+| **Adresse** | [Adressprüfung](#adressprüfung) · [PLZ-Vorschläge](#postleitzahlen-autocomplete) · [Ortsvorschläge](#orts-autocomplete) · [Straßenvorschläge](#straßen-autocomplete) · [Adressdetails](#address-details) · [Single Line Input](#single-line-input) |
+| **E-Mail** | [E-Mail Prüfung](#e-mail-prüfung) |
+| **Person** | [Namensprüfung](#namens-prüfung) |
+| **Telefon** | [Rufnummernprüfung](#telefonnummern-prüfung) |
+| **IBAN** | [IBAN-Prüfung](#iban-prüfung) |
+| **Unternehmen** | [USt-ID einfach](#einfache-umsatzsteuer-id-prüfung) · [USt-ID qualifiziert](#qualifizierte-umsatzsteuer-id-prüfung) · [Firmensuche](#firmensuche) |
+| **Verpackung** | [Lucid Check](#lucid-check) |
+| **Technisch** | [Session abschließen](guidelines/sessions-guideline.md) |
 
 ## Plugins und fertige Intergrationen
 
