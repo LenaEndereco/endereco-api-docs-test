@@ -1,0 +1,35 @@
+site_name: Endereco API Dokumentation
+site_url: https://lenaendereco.github.io/endereco-api-docs-test
+repo_url: https://github.com/LenaEndereco/endereco-api-docs-test
+repo_name: endereco-api-docs-test
+
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Übersicht: index.md
+  - API-Struktur: structure-api.md
+  - Services:
+    - Adressprüfung: services/address-check.md
+    - PLZ-Autocomplete: services/post-code-autocomplete.md
+    - Orts-Autocomplete: services/city-name-autocomplete.md
+    - Straßen-Autocomplete: services/street-autocomplete.md
+    - E-Mail-Prüfung: services/email-check.md
+    - Namensprüfung: services/name-check.md
+    - Telefonnummern: services/phone-check.md
+    - IBAN: services/iban-check.md
+    - USt-ID (einfach): services/vat-id-check.md
+    - USt-ID (qualifiziert): services/vat-id-check-extended.md
+    - Firmensuche: services/company-autocomplete.md
+    - Lucid-Check: services/lucid-check.md
+    - Adressdetails: services/address-details.md
+    - Single-Line-Input: services/address-single-line-autocomplete.md
+  - Guidelines:
+    - Sessions: guidelines/sessions-guideline.md
+  - Ländercodes: country-codes.md
