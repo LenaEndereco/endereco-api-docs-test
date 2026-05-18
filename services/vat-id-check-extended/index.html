@@ -1,0 +1,1905 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://lenaendereco.github.io/endereco-api-docs-test/services/vat-id-check-extended/">
+      
+      
+        <link rel="prev" href="../vat-id-check/">
+      
+      
+        <link rel="next" href="../company-autocomplete/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>USt-ID (qualifiziert) - Endereco API Dokumentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#qualifizierte-umsatzsteuer-id-prufung" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href="../.." title="Endereco API Dokumentation" class="md-header__button md-logo" aria-label="Endereco API Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Endereco API Dokumentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              USt-ID (qualifiziert)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/LenaEndereco/endereco-api-docs-test" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    endereco-api-docs-test
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Hauptnavigation" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../structure-api/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API-Struktur
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../address-check/" class="md-tabs__link">
+          
+  
+  
+  Services
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guidelines/sessions-guideline/" class="md-tabs__link">
+          
+  
+  
+  Guidelines
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../country-codes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ländercodes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Endereco API Dokumentation" class="md-nav__button md-logo" aria-label="Endereco API Dokumentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Endereco API Dokumentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/LenaEndereco/endereco-api-docs-test" title="Zum Repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    endereco-api-docs-test
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Übersicht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../structure-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API-Struktur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adressprüfung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post-code-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PLZ-Autocomplete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../city-name-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orts-Autocomplete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../street-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Straßen-Autocomplete
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../email-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    E-Mail-Prüfung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../name-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Namensprüfung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phone-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Telefonnummern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../iban-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBAN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vat-id-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USt-ID (einfach)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    USt-ID (qualifiziert)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../company-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmensuche
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lucid-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lucid-Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address-details/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adressdetails
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../address-single-line-autocomplete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Single-Line-Input
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guidelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guidelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guidelines/sessions-guideline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../country-codes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ländercodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="qualifizierte-umsatzsteuer-id-prufung">Qualifizierte Umsatzsteuer-ID-Prüfung</h1>
+<ul>
+<li><a href="#struktur-der-schnittstelle">Struktur der Schnittstelle</a></li>
+<li><a href="#methode">Methode</a></li>
+<li><a href="#eingabeparameter">Eingabeparameter</a></li>
+<li><a href="#ausgabefelder">Ausgabefelder</a></li>
+<li><a href="#statuscodes">Statuscodes</a></li>
+<li><a href="#beispiele">Beispiele</a></li>
+<li><a href="#gültige-und-richtig-formatierte-umsatzsteuer-id">Gültiger und richtig formatierter Umsatzsteuer-ID</a></li>
+<li><a href="#ungültige-aber-richtig-formatierte-umsatzsteuer-id">Ungültiger, aber richtig formatierter Umsatzsteuer-ID</a></li>
+<li><a href="#gültige-aber-falsch-formatierte-umsatzsteuer-id">Gültiger, aber falsch formatierter Umsatzsteuer-ID</a></li>
+<li><a href="#ohne-länderkürzel">Ohne Länderkürzel</a></li>
+<li><a href="#falsches-länderkürzel">Falschem Länderkürzel</a></li>
+<li><a href="#ungültiges-format">Ungültigem Format</a></li>
+<li><a href="#fehlendes-pflichtfelder">Prüfung mit fehlenden Pflichtfeldern</a></li>
+</ul>
+<h1 id="struktur-der-schnittstelle">Struktur der Schnittstelle</h1>
+<p>Die Struktur der API ist <a href="../../structure-api/">hier</a> beschrieben</p>
+<h2 id="methode">Methode</h2>
+<p>Für die qualifizierte Umsatzsteuer-ID-Prüfung muss <code>vatIdCheck</code> als Methode angegeben werden</p>
+<h2 id="eingabeparameter">Eingabeparameter</h2>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Erwarteter Wert</th>
+<th>Pflicht</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vatId</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die zu prüfende Umsatzsteuer-ID</td>
+</tr>
+<tr>
+<td>requesterVatId</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die eigene Umsatzsteuer-ID</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Firmennamen der zu prüfenden Umsatzsteuer-ID</td>
+</tr>
+<tr>
+<td>companyPostalCode</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die Postleitzahl der zu prüfenden Firma</td>
+</tr>
+<tr>
+<td>companyLocality</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Ortsnamen der zu prüfenden Firma</td>
+</tr>
+<tr>
+<td>companyStreetFull</td>
+<td>String</td>
+<td>Ja, wenn companyStreet und companyHouseNumber nicht gesetzt sind</td>
+<td>Enthält den Straßennamen inkl. Hausnummer der zu prüfenden Firma</td>
+</tr>
+<tr>
+<td>companyStreet</td>
+<td>String</td>
+<td>Ja, wenn companyStreetFull nicht gesetzt ist</td>
+<td>Enthält den Straßennamen der zu prüfenden Firma</td>
+</tr>
+<tr>
+<td>companyHouseNumber</td>
+<td>String</td>
+<td>Ja, wenn companyStreetFull nicht gesetzt ist</td>
+<td>Enthält die Hausnummer der zu prüfenden Firma</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td>Int</td>
+<td>Nein</td>
+<td>(Beta) Der Timeout bezieht sich nicht auf die Abfrage zum Endereco-Server. Er gibt die Anzahl an Sekunden an, innerhalb derer die Antwort vom Finanzamt eintreffen muss. Sollte diese Zeit überschritten werden, wird ein Fehler zurückgegeben. Es wird eine Zahl zwischen 5 und 60 erwartet. Wenn dieser Parameter nicht gesetzt ist, wird der Wert 60 verwendet.</td>
+</tr>
+<tr>
+<td>allowCache</td>
+<td>Boolean</td>
+<td>Nein</td>
+<td>(Beta) Mit diesem Parameter kann gesteuert werden, ob in der Antwort nur Live-Daten vom Bundeszentralamt für Steuern oder auch Daten aus dem Cache enthalten sein dürfen. Hier wird entweder true oder false erwartet. Wenn dieser Parameter nicht gesetzt ist, wird true verwendet.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ausgabefelder">Ausgabefelder</h2>
+<table>
+<thead>
+<tr>
+<th>Feld</th>
+<th>Erwarteter Wert</th>
+<th>Pflicht</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>predictions</td>
+<td>Array</td>
+<td>Ja</td>
+<td>Enthält JSON-Objekte mit Korrekturvorschlägen.</td>
+</tr>
+<tr>
+<td>predictions.vatId</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die formatierte Umsatzsteuer-ID der zu prüfenden Firma.</td>
+</tr>
+<tr>
+<td>predictions.companyName</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Firmennamen zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddress</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die unstrukturierte Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die strukturierte Firmenadresse zu diesem Vorschlag. Wird nur zurückgegeben, wenn die Adresse in strukturierter Form vorliegt</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.streetFull</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die Straße inkl. Hausnummer der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.street</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Straßennamen der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.houseNumber</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die Hausnummer der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.additionalInfo</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Adresszusatz der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.postCode</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die Postleitzahl der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.cityName</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Ortsname der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>predictions.companyAddressFormatted.country</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält den Ländercode der strukturierten Firmenadresse zu diesem Vorschlag.</td>
+</tr>
+<tr>
+<td>certification</td>
+<td>JSON</td>
+<td>Ja</td>
+<td>Enthält das Prüfzertifikat.</td>
+</tr>
+<tr>
+<td>certificationStatus</td>
+<td>JSON</td>
+<td>Ja</td>
+<td>Enthält Informationen zum Prüfzertifikat.</td>
+</tr>
+<tr>
+<td>certificationStatus.source</td>
+<td>String</td>
+<td>Ja</td>
+<td>Enthält die Quelle des Prüfzertifikats. Wenn dieser "realtime" ist, dann kommen die Daten direkt vom Bundeszentralamt für Stuern und es handelt sich laut §18e UStG und 18e.1 Abs. 2 Satz 4 UStAE um eine qualifizierte Prüfung. Wenn dieser "cache" ist, dann kommen die Daten aus dem cache.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Array</td>
+<td>Ja</td>
+<td>Enthält eine Liste mit Statuscodes, die den geprüften Datensatz beschreiben. Siehe <a href="#statuscodes">Liste der Statuscodes</a>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Alle erfolgreichen Prüfanfragen werden auf Seiten von endereco gespeichert und archiviert.
+</p>
+</blockquote>
+<h2 id="statuscodes">Statuscodes</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>vat_id_valid</td>
+<td>Die Umsatzsteuer-ID ist korrekt.</td>
+</tr>
+<tr>
+<td>vat_id_invalid</td>
+<td>Die Umsatzsteuer-ID ist ungültig.</td>
+</tr>
+<tr>
+<td>vat_id_unknown_status</td>
+<td>Die Umsatzsteuer-ID konnte nicht auf Gültigkeit geprüft werden.</td>
+</tr>
+<tr>
+<td>vat_id_body_needs_correction</td>
+<td>Die Schreibweise der Umsatzsteuer-ID ist korrekturbedürftig.</td>
+</tr>
+<tr>
+<td>vat_id_body_minor_correction</td>
+<td>Kleine Änderung der Umsatzsteuer-ID.</td>
+</tr>
+<tr>
+<td>vat_id_body_major_correction</td>
+<td>Große Änderung der Umsatzsteuer-ID.</td>
+</tr>
+<tr>
+<td>vat_id_format_invalid</td>
+<td>Format entspricht nicht der <a href="https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/Documents/COSME/VAT%20numbers%20EU.pdf">Spezifikation</a>.</td>
+</tr>
+<tr>
+<td>vat_id_format_correct</td>
+<td>Format entspricht der <a href="https://euipo.europa.eu/tunnel-web/secure/webdav/guest/document_library/Documents/COSME/VAT%20numbers%20EU.pdf">Spezifikation</a>.</td>
+</tr>
+<tr>
+<td>vat_id_company_address_match</td>
+<td>Die angegebene Firmenanschrift passt zu der Firmenanschrift, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_address_partial_match</td>
+<td>Die angegebene Firmenanschrift passt teilweise zu der Firmenanschrift, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_address_mismatch</td>
+<td>Die angegebene Firmenanschrift passt nicht zu der Firmenanschrift, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_postal_code_match</td>
+<td>Die angegebene Postleitzahl der Firmenanschrift passt zu der Postleitzahl, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_postal_code_partial_match</td>
+<td>Die angegebene Postleitzahl der Firmenanschrift passt teilweise zu der Postleitzahl, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_postal_code_mismatch</td>
+<td>Die angegebene Postleitzahl der Firmenanschrift passt nicht zu der Postleitzahl, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_locality_match</td>
+<td>Der angegebene Ortsname der Firmenanschrift passt zu dem Ortsnamen, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_locality_partial_match</td>
+<td>Der angegebene Ortsname der Firmenanschrift passt teilweise zu dem Ortsname, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_locality_mismatch</td>
+<td>Der angegebene Ortsname der Firmenanschrift passt nicht zu dem Ortsname, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_street_full_match</td>
+<td>Die angegebene Straßenname mit Hausnummer der Firmenanschrift passt zu dem Straßenname mit Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_street_full_partial_match</td>
+<td>Die angegebene Straßenname mit Hausnummer der Firmenanschrift passt teilweise zu dem Straßenname mit Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_street_full_mismatch</td>
+<td>Die angegebene Straßenname mit Hausnummer der Firmenanschrift passt nicht zu dem Straßenname mit Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_street_match</td>
+<td>Die angegebene Straßenname der Firmenanschrift passt zu dem Straßenname, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_street_partial_match</td>
+<td>Die angegebene Straßenname der Firmenanschrift passt teilweise zu dem Straßenname, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nichtdes BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_street_mismatch</td>
+<td>Die angegebene Straßenname der Firmenanschrift passt nicht zu dem Straßenname, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_house_number_match</td>
+<td>Die angebegene Hausnummer der Firmenanschrift passt zu der Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_house_number_partial_match</td>
+<td>Die angegebene Hausnummer der Firmenanschrift passt teilweise zu der Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_house_number_mismatch</td>
+<td>Die angegebene Hausnummer der Firmenanschrift passt nicht zu der Hausnummer, die bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt</td>
+</tr>
+<tr>
+<td>vat_id_company_name_match</td>
+<td>Der angegebene Firmenname passt zum Firmennamen, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_name_partial_match</td>
+<td>Der angegebene Firmenname passt teilweise zum Firmennamen, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+<tr>
+<td>vat_id_company_name_mismatch</td>
+<td>Der angegebene Firmenname passt nicht zum Firmennamen, der bei der Handelskammer hinterlegt ist. Das ist die Interpretation von endereco, nicht des BZSt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="error-codes-im-zertifikat">Error Codes im Zertifikat:</h2>
+<p>Im Teil der Zertifikation werden Errorcodes ausgegeben. Diese sind 1:1 vom entsprechenden Datenprovider übernommen, und bewerten die Gültigkeit der abgefragten USt-IdNr.</p>
+<p>Beim <a href="https://evatr.bff-online.de/eVatR/xmlrpc/codes">Bundeszentralamt für Steuern</a> sind folgende Statuscodes (ErrorCodes) für die USt-IdNr. hinterlegt:</p>
+<table>
+<thead>
+<tr>
+<th>ErrorCode</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Die angefragte USt-IdNr. ist gültig.</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Die angefragte USt-IdNr. ist ungültig.</td>
+</tr>
+<tr>
+<td>202</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie ist nicht in der Unternehmerdatei des betreffenden EU-Mitgliedstaates registriert.<br><strong>Hinweis:</strong> Ihr Geschäftspartner kann seine gültige USt-IdNr. bei der für ihn zuständigen Finanzbehörde in Erfahrung bringen. Möglicherweise muss er einen Antrag stellen, damit seine USt-IdNr. in die Datenbank aufgenommen wird.</td>
+</tr>
+<tr>
+<td>203</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie ist erst ab dem … gültig (siehe Feld ‚Gueltig_ab‘).</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie war im Zeitraum von … bis … gültig (siehe Felder ‚Gueltig_ab‘ und ‚Gueltig_bis‘).</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Ihre Anfrage kann derzeit durch den angefragten EU-Mitgliedstaat oder aus anderen Gründen nicht beantwortet werden. Bitte versuchen Sie es später noch einmal. Bei wiederholten Problemen wenden Sie sich bitte an das Bundeszentralamt für Steuern – Dienstsitz Saarlouis.</td>
+</tr>
+<tr>
+<td>206</td>
+<td>Ihre deutsche USt-IdNr. ist ungültig. Eine Bestätigungsanfrage ist daher nicht möglich. Den Grund hierfür können Sie beim Bundeszentralamt für Steuern – Dienstsitz Saarlouis – erfragen.</td>
+</tr>
+<tr>
+<td>208</td>
+<td>Für die von Ihnen angefragte USt-IdNr. läuft gerade eine Anfrage von einem anderen Nutzer. Eine Bearbeitung ist daher nicht möglich. Bitte versuchen Sie es später noch einmal.</td>
+</tr>
+<tr>
+<td>209</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie entspricht nicht dem Aufbau, der für diesen EU-Mitgliedstaat gilt.</td>
+</tr>
+<tr>
+<td>210</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie entspricht nicht den Prüfziffernregeln, die für diesen EU-Mitgliedstaat gelten.</td>
+</tr>
+<tr>
+<td>211</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie enthält unzulässige Zeichen (wie z.B. Leerzeichen, Punkt oder Bindestrich).</td>
+</tr>
+<tr>
+<td>212</td>
+<td>Die angefragte USt-IdNr. ist ungültig. Sie enthält ein unzulässiges Länderkennzeichen.</td>
+</tr>
+<tr>
+<td>213</td>
+<td>Sie sind nicht zur Abfrage einer deutschen USt-IdNr. berechtigt.</td>
+</tr>
+<tr>
+<td>214</td>
+<td>Ihre deutsche USt-IdNr. ist fehlerhaft. Sie beginnt mit ‚DE‘ gefolgt von 9 Ziffern.</td>
+</tr>
+<tr>
+<td>215</td>
+<td>Ihre Anfrage enthält nicht alle notwendigen Angaben für eine einfache Bestätigungsanfrage (Ihre deutsche USt-IdNr. und die ausländische USt-IdNr.). Ihre Anfrage kann deshalb nicht bearbeitet werden.</td>
+</tr>
+<tr>
+<td>216</td>
+<td>Ihre Anfrage enthält nicht alle notwendigen Angaben für eine qualifizierte Bestätigungsanfrage (Ihre deutsche USt-IdNr., die ausländische USt-IdNr., Firmenname einschl. Rechtsform und Ort). Es wurde eine einfache Bestätigungsanfrage durchgeführt mit folgendem Ergebnis: Die angefragte USt-IdNr. ist gültig.</td>
+</tr>
+<tr>
+<td>217</td>
+<td>Bei der Verarbeitung der Daten aus dem angefragten EU-Mitgliedstaat ist ein Fehler aufgetreten. Ihre Anfrage kann deshalb nicht bearbeitet werden.</td>
+</tr>
+<tr>
+<td>218</td>
+<td>Eine qualifizierte Bestätigung ist zurzeit nicht möglich. Es wurde eine einfache Bestätigungsanfrage mit folgendem Ergebnis durchgeführt: Die angefragte USt-IdNr. ist gültig.</td>
+</tr>
+<tr>
+<td>219</td>
+<td>Bei der Durchführung der qualifizierten Bestätigungsanfrage ist ein Fehler aufgetreten. Es wurde eine einfache Bestätigungsanfrage mit folgendem Ergebnis durchgeführt: Die angefragte USt-IdNr. ist gültig.</td>
+</tr>
+<tr>
+<td>221</td>
+<td>Die Anfragedaten enthalten nicht alle notwendigen Parameter oder einen ungültigen Datentyp. Weitere Informationen erhalten Sie bei den Hinweisen zum Schnittstelle – Aufruf.</td>
+</tr>
+<tr>
+<td>223</td>
+<td>Die angefragte USt-IdNr. ist gültig. Die Druckfunktion steht nicht mehr zur Verfügung, da der Nachweis gem. UStAE zu § 18e.1 zu führen ist.</td>
+</tr>
+<tr>
+<td>999</td>
+<td>Eine Bearbeitung Ihrer Anfrage ist zurzeit nicht möglich. Bitte versuchen Sie es später noch einmal.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="beispiele">Beispiele</h1>
+<h2 id="gultige-daten-antwort-kommt-vom-bundeszentralamt-fur-steuern">Gültige Daten - Antwort kommt vom Bundeszentralamt für Steuern</h2>
+<h3 id="anfrage">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;,
+      &quot;allowCache&quot;: false,
+      &quot;timeout&quot;: &quot;30&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;predictions&quot;: [
+            {
+                &quot;vatId&quot;: &quot;DE297464149&quot;,
+                &quot;companyName&quot;: &quot;endereco UG (haftungsbeschränkt) Gesellschaft für Master Data Quality Management&quot;,
+                &quot;companyAddress&quot;: &quot;Balthasar-Neumann Str. 4 b, 97236, Randersacker&quot;,
+                &quot;companyAddressFormatted&quot;: {
+                    &quot;streetFull&quot;: &quot;Balthasar-Neumann Str. 4 b&quot;,
+                    &quot;additionalInfo&quot;: &quot;&quot;,
+                    &quot;postCode&quot;: &quot;97236&quot;,
+                    &quot;cityName&quot;: &quot;Randersacker&quot;,
+                    &quot;country&quot;: &quot;DE&quot;,
+                    &quot;street&quot;: &quot;Balthasar-Neumann Str.&quot;,
+                    &quot;houseNumber&quot;: &quot;4 b&quot;
+                }
+            }
+        ],
+        &quot;certification&quot;: {
+            &quot;ErrorCode&quot;: &quot;213&quot;,
+            &quot;Date&quot;: &quot;08.12.2025&quot;,
+            &quot;Time&quot;: &quot;11:31:57&quot;,
+            &quot;Name&quot;: [],
+            &quot;City&quot;: [],
+            &quot;PostalCode&quot;: [],
+            &quot;Street&quot;: [],
+            &quot;Type&quot;: &quot;BZST&quot;
+        },
+        &quot;certificationStatus&quot;: {
+            &quot;source&quot;: &quot;realtime&quot;
+        },
+        &quot;status&quot;: [
+            &quot;vat_id_valid&quot;,
+            &quot;vat_id_format_correct&quot;,
+            &quot;vat_id_company_name_mismatch&quot;,
+            &quot;vat_id_company_postal_code_match&quot;,
+            &quot;vat_id_company_locality_match&quot;,
+            &quot;vat_id_company_street_full_match&quot;,
+            &quot;vat_id_company_street_match&quot;,
+            &quot;vat_id_company_house_number_match&quot;,
+            &quot;vat_id_company_address_match&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="gultige-daten-antwort-aus-dem-cache">Gültige Daten - Antwort aus dem Cache</h2>
+<h3 id="anfrage_1">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;,
+      &quot;allowCache&quot;: true,
+      &quot;timeout&quot;: &quot;5&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_1">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;predictions&quot;: [
+            {
+                &quot;vatId&quot;: &quot;DE297464149&quot;,
+                &quot;companyName&quot;: &quot;endereco UG (haftungsbeschränkt) Gesellschaft für Master Data Quality Management&quot;,
+                &quot;companyAddress&quot;: &quot;Balthasar-Neumann Str. 4 b, 97236, Randersacker&quot;,
+                &quot;companyAddressFormatted&quot;: {
+                    &quot;streetFull&quot;: &quot;Balthasar-Neumann Str. 4 b&quot;,
+                    &quot;additionalInfo&quot;: &quot;&quot;,
+                    &quot;postCode&quot;: &quot;97236&quot;,
+                    &quot;cityName&quot;: &quot;Randersacker&quot;,
+                    &quot;country&quot;: &quot;DE&quot;,
+                    &quot;street&quot;: &quot;Balthasar-Neumann Str.&quot;,
+                    &quot;houseNumber&quot;: &quot;4 b&quot;
+                }
+            }
+        ],
+        &quot;certification&quot;: {
+            &quot;ErrorCode&quot;: &quot;213&quot;,
+            &quot;Date&quot;: &quot;08.12.2025&quot;,
+            &quot;Time&quot;: &quot;11:31:57&quot;,
+            &quot;Name&quot;: [],
+            &quot;City&quot;: [],
+            &quot;PostalCode&quot;: [],
+            &quot;Street&quot;: [],
+            &quot;Type&quot;: &quot;BZST&quot;
+        },
+        &quot;certificationStatus&quot;: {
+            &quot;source&quot;: &quot;cache&quot;
+        },
+        &quot;status&quot;: [
+            &quot;vat_id_valid&quot;,
+            &quot;vat_id_format_correct&quot;,
+            &quot;vat_id_company_name_mismatch&quot;,
+            &quot;vat_id_company_postal_code_match&quot;,
+            &quot;vat_id_company_locality_match&quot;,
+            &quot;vat_id_company_street_full_match&quot;,
+            &quot;vat_id_company_street_match&quot;,
+            &quot;vat_id_company_house_number_match&quot;,
+            &quot;vat_id_company_address_match&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="gultige-und-richtig-formatierte-umsatzsteuer-id">Gültige und richtig formatierte Umsatzsteuer-ID</h2>
+<h3 id="anfrage_2">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_2">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;predictions&quot;: [
+            {
+                &quot;vatId&quot;: &quot;DE297464149&quot;,
+                &quot;companyName&quot;: &quot;endereco UG (haftungsbeschränkt) Gesellschaft für Master Data Quality Management&quot;,
+                &quot;companyAddress&quot;: &quot;Balthasar-Neumann Str. 4 b, 97236, Randersacker&quot;,
+                &quot;companyAddressFormatted&quot;: {
+                    &quot;streetFull&quot;: &quot;Balthasar-Neumann Str. 4 b&quot;,
+                    &quot;additionalInfo&quot;: &quot;&quot;,
+                    &quot;postCode&quot;: &quot;97236&quot;,
+                    &quot;cityName&quot;: &quot;Randersacker&quot;,
+                    &quot;country&quot;: &quot;DE&quot;,
+                    &quot;street&quot;: &quot;Balthasar-Neumann Str.&quot;,
+                    &quot;houseNumber&quot;: &quot;4 b&quot;
+                }
+            }
+        ],
+        &quot;certification&quot;: {
+            &quot;ErrorCode&quot;: &quot;213&quot;,
+            &quot;Date&quot;: &quot;08.12.2025&quot;,
+            &quot;Time&quot;: &quot;11:31:57&quot;,
+            &quot;Name&quot;: [],
+            &quot;City&quot;: [],
+            &quot;PostalCode&quot;: [],
+            &quot;Street&quot;: [],
+            &quot;Type&quot;: &quot;BZST&quot;
+        },
+        &quot;certificationStatus&quot;: {
+            &quot;source&quot;: &quot;realtime&quot;
+        },
+        &quot;status&quot;: [
+            &quot;vat_id_valid&quot;,
+            &quot;vat_id_format_correct&quot;,
+            &quot;vat_id_company_name_mismatch&quot;,
+            &quot;vat_id_company_postal_code_match&quot;,
+            &quot;vat_id_company_locality_match&quot;,
+            &quot;vat_id_company_street_full_match&quot;,
+            &quot;vat_id_company_street_match&quot;,
+            &quot;vat_id_company_house_number_match&quot;,
+            &quot;vat_id_company_address_match&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="ungultige-aber-richtig-formatierte-umsatzsteuer-id">Ungültige, aber richtig formatierte Umsatzsteuer-ID</h2>
+<h3 id="anfrage_3">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE297464148&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_3">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;predictions&quot;: [],
+        &quot;certification&quot;: {
+            &quot;ErrorCode&quot;: &quot;213&quot;,
+            &quot;Date&quot;: &quot;08.12.2025&quot;,
+            &quot;Time&quot;: &quot;11:32:46&quot;,
+            &quot;Name&quot;: [],
+            &quot;City&quot;: [],
+            &quot;PostalCode&quot;: [],
+            &quot;Street&quot;: [],
+            &quot;Type&quot;: &quot;BZST&quot;
+        },
+        &quot;certificationStatus&quot;: {
+            &quot;source&quot;: &quot;realtime&quot;
+        },
+        &quot;status&quot;: [
+            &quot;vat_id_invalid&quot;,
+            &quot;vat_id_format_correct&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="gultige-aber-falsch-formatierte-umsatzsteuer-id">Gültige, aber falsch formatierte Umsatzsteuer-ID</h2>
+<h3 id="anfrage_4">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE 297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_4">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;predictions&quot;: [
+            {
+                &quot;vatId&quot;: &quot;DE297464149&quot;,
+                &quot;companyName&quot;: &quot;endereco UG (haftungsbeschränkt) Gesellschaft für Master Data Quality Management&quot;,
+                &quot;companyAddress&quot;: &quot;Balthasar-Neumann Str. 4 b, 97236, Randersacker&quot;,
+                &quot;companyAddressFormatted&quot;: {
+                    &quot;streetFull&quot;: &quot;Balthasar-Neumann Str. 4 b&quot;,
+                    &quot;additionalInfo&quot;: &quot;&quot;,
+                    &quot;postCode&quot;: &quot;97236&quot;,
+                    &quot;cityName&quot;: &quot;Randersacker&quot;,
+                    &quot;country&quot;: &quot;DE&quot;,
+                    &quot;street&quot;: &quot;Balthasar-Neumann Str.&quot;,
+                    &quot;houseNumber&quot;: &quot;4 b&quot;
+                }
+            }
+        ],
+        &quot;certification&quot;: {
+            &quot;ErrorCode&quot;: &quot;213&quot;,
+            &quot;Date&quot;: &quot;08.12.2025&quot;,
+            &quot;Time&quot;: &quot;11:33:23&quot;,
+            &quot;Name&quot;: [],
+            &quot;City&quot;: [],
+            &quot;PostalCode&quot;: [],
+            &quot;Street&quot;: [],
+            &quot;Type&quot;: &quot;BZST&quot;
+        },
+        &quot;certificationStatus&quot;: {
+            &quot;source&quot;: &quot;realtime&quot;
+        },
+        &quot;status&quot;: [
+            &quot;vat_id_valid&quot;,
+            &quot;vat_id_format_invalid&quot;,
+            &quot;vat_id_body_needs_correction&quot;,
+            &quot;vat_id_body_minor_correction&quot;,
+            &quot;vat_id_company_name_mismatch&quot;,
+            &quot;vat_id_company_postal_code_match&quot;,
+            &quot;vat_id_company_locality_match&quot;,
+            &quot;vat_id_company_street_full_match&quot;,
+            &quot;vat_id_company_street_match&quot;,
+            &quot;vat_id_company_house_number_match&quot;,
+            &quot;vat_id_company_address_match&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="ohne-landerkurzel">Ohne Länderkürzel</h2>
+<h3 id="anfrage_5">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_5">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;status&quot;: [
+            &quot;vat_id_invalid&quot;,
+            &quot;vat_id_format_invalid&quot;
+        ],
+        &quot;predictions&quot;: []
+    }
+}
+</code></pre>
+<h2 id="falsches-landerkurzel">Falsches Länderkürzel</h2>
+<h3 id="anfrage_6">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;AA297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_6">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;status&quot;: [
+            &quot;vat_id_invalid&quot;,
+            &quot;vat_id_format_invalid&quot;
+        ],
+        &quot;predictions&quot;: []
+    }
+}
+</code></pre>
+<h2 id="ungultiges-format">Ungültiges Format</h2>
+<h3 id="anfrage_7">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId&quot;: &quot;DE297464149a&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_7">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;id&quot;: 1,
+    &quot;result&quot;: {
+        &quot;status&quot;: [
+            &quot;vat_id_invalid&quot;,
+            &quot;vat_id_format_invalid&quot;
+        ],
+        &quot;predictions&quot;: []
+    }
+}
+</code></pre>
+<h2 id="fehlendes-pflichtfelder">Fehlendes Pflichtfelder</h2>
+<h3 id="anfrage_8">Anfrage</h3>
+<pre><code>{
+   &quot;jsonrpc&quot;: &quot;2.0&quot;,
+   &quot;id&quot;: 1,
+   &quot;method&quot;: &quot;vatIdCheck&quot;,
+   &quot;params&quot;: {
+      &quot;vatId2&quot;: &quot;AA297464149&quot;,
+      &quot;requesterVatID&quot;: &quot;DE297464149&quot;,
+      &quot;companyName&quot;: &quot;endereco&quot;,
+      &quot;companyPostalCode&quot;: &quot;97236&quot;,
+      &quot;companyLocality&quot;: &quot;Randersacker&quot;,
+      &quot;companyStreetFull&quot;: &quot;Balthasar-Neumann Str. 4b&quot;
+   }
+}
+</code></pre>
+<h3 id="antwort_8">Antwort</h3>
+<pre><code>{
+    &quot;jsonrpc&quot;: &quot;2.0&quot;,
+    &quot;error&quot;: {
+        &quot;code&quot;: -32603,
+        &quot;message&quot;: &quot;Field \&quot;params.vatId\&quot; must be set.&quot;
+    }
+}
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
