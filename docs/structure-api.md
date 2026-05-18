@@ -13,19 +13,27 @@ Jedoch ist die Spezifikation nicht vollständig umgesetzt. Unter anderem gibt es
 Datensätze (Bulk-Processing) zu übermitteln, und die Fehlercodes sind rudimentär und sollten in einer Integration nicht
 verarbeitet werden.
 
-| Feld    | Erwarteter Wert     | Bedeutung                                                                                                                                                    |
-|---------|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| jsonrpc | "2.0" als String    | Mit diesem Feld wird die Version des Protokolls angegeben. Der Wert ist immer gleich.                                                                        |
-| id      | Zahl größer als 0   | Mit diesem Feld wird die ID der Anfrage übergeben. Falls mehrere Anfragen asynchron versendet werden, kann über die ID die Sequenz wiederhergestellt werden. |
-| method  | String              | Name [einer der Funktionen](./readme.md#übersicht-der-funktionen) der Endereco Services API, z.B. "addressCheck"                                             |
-| params  | Hash-Array / Object | Eine Sammlung der methodenspezifischen Parameter                                                                                                             |
-| result  | Hash-Array / Object | Container für die Antwort bei erfolgreichem Verlauf der Anfrage.                                                                                             |
-| error   | Hash-Array / Object | Container für die Fehlermeldung beim fehlerhaften Verlauf der Anfrage.                                                                                       |
-| code    | Zahl                | Nummer des Fehlers. Aktuell rudimentär umgesetzt und soll ignoriert werden.                                                                                  |
-| message | String              | Fehlermeldung in menschenlesbarer Form.                                                                                                                      |
+### Request-Felder
 
+| Feld | Erwarteter Wert | Bedeutung |
+|------|----------------|-----------|
+| `jsonrpc` | `"2.0"` | Version des Protokolls. Immer gleich. |
+| `id` | Zahl > 0 | ID der Anfrage. Bei asynchronen Anfragen zur Sequenzwiederherstellung. |
+| `method` | String | Name der Funktion, z.B. `addressCheck` |
+| `params` | Object | Methodenspezifische Parameter |
 
-## Url
+### Response-Felder
+
+| Feld | Typ | Bedeutung |
+|------|-----|-----------|
+| `result` | Object | Antwort bei erfolgreichem Verlauf |
+| `error` | Object | Fehlermeldung bei fehlerhaftem Verlauf |
+| `code` | Zahl | Fehlernummer. Aktuell rudimentär – soll ignoriert werden. |
+| `message` | String | Fehlermeldung in menschenlesbarer Form |
+
+## API-Endpunkt
+
+Alle Anfragen werden als `POST` an folgenden Endpunkt gesendet:
 
 ```
 POST https://endereco-service.de/rpc/v1
@@ -33,10 +41,10 @@ POST https://endereco-service.de/rpc/v1
 
 ## Headers
 
-| Feld                  | Bedeutung                                                                                        |
-|-----------------------|--------------------------------------------------------------------------------------------------|
-| Content-Type          | application/json                                                                                 |
-| X-Transaction-Id      | not_required, siehe [Generierung der Session ID's](guidelines/sessions-guideline.md)            |
-| X-Agent               | MyClient v1.0.0, siehe [Client ID Guideline](guidelines/client-id-guideline.md)                 |
-| X-Transaction-Referer | www.example.de/register, siehe [Referrer übergeben](guidelines/providing-referrer-guidlines.md) |
-| X-Auth-Key            | siehe [Authentifizierung](./readme.md#authentifizierung)                                         |
+| Header | Wert | Hinweis |
+|--------|------|---------|
+| `Content-Type` | `application/json` | |
+| `X-Transaction-Id` | Session ID | Siehe [Session Guideline](guidelines/sessions-guideline.md) |
+| `X-Agent` | z.B. `MyClient v1.0.0` | Siehe [Client ID Guideline](guidelines/client-id-guideline.md) |
+| `X-Transaction-Referer` | z.B. `www.example.de/register` | Siehe [Referrer Guideline](guidelines/providing-referrer-guidlines.md) |
+| `X-Auth-Key` | API-Key | Siehe [Authentifizierung](index.md#authentifizierung) |
